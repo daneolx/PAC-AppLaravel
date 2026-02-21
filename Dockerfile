@@ -43,7 +43,7 @@ RUN rm -rf storage/logs/*.log \
     && rm -rf storage/framework/views/*.php
 
 # Set permissions
-RUN chown -R www-data:www-data storage bootstrap/cache public
+RUN chown -R www-data:www-data storage bootstrap/cache public database
 
 # Configuration
 COPY nginx.conf /etc/nginx/http.d/default.conf

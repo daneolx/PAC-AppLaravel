@@ -51,8 +51,12 @@ COPY nginx.conf /etc/nginx/http.d/default.conf
 # Expose port
 EXPOSE 80
 
+# Set environment variables
+ENV LOG_CHANNEL=stderr
+
 # Start script
-CMD php artisan config:cache \
+CMD php artisan migrate --force \
+    && php artisan config:cache \
     && php artisan route:cache \
     && php artisan view:cache \
     && php-fpm -D \

@@ -14,5 +14,3 @@ phpunit.xml
 .vscode
 .idea
 .dockerignore
-Dockerfile
-nginx.conf

@@ -56,6 +56,7 @@ ENV LOG_CHANNEL=stderr
 
 # Start script
 CMD php artisan migrate --force \
+    && chown -R www-data:www-data database \
     && php artisan config:cache \
     && php artisan route:cache \
     && php artisan view:cache \
